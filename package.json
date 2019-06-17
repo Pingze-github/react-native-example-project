@@ -1,0 +1,36 @@
+{
+  "name": "TodoApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native run-android",
+    "build": "cd android && gradlew assembleRelease",
+    "install": "cd android && gradlew installRelease",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.9",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.1",
+    "redux-devtools": "^3.5.0",
+    "redux-persist": "^5.10.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "@types/jest": "^24.0.14",
+    "@types/react": "^16.8.20",
+    "@types/react-native": "^0.57.63",
+    "@types/react-redux": "^7.1.0",
+    "@types/react-test-renderer": "^16.8.2",
+    "babel-jest": "^24.8.0",
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "^0.54.1",
+    "react-test-renderer": "16.8.3",
+    "typescript": "^3.5.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
