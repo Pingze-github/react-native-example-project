@@ -17,7 +17,7 @@ import actions from '../store/actions'
 
 interface Props {
   todos: any,
-  dispatch: Function,
+  dispatch: (action: any) => void,
 }
 class App extends Component<Props> {
 

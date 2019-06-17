@@ -1,21 +1,23 @@
 import React, { Component } from 'react'
-import { StyleSheet, TextInput } from 'react-native'
+import { StyleSheet } from 'react-native'
+
+import { Input } from 'react-native-elements'
 
 const styles = StyleSheet.create({
   input: {
-    height: 50,
-    padding: 15,
+    height: 42,
+    paddingLeft: 20,
     borderBottomColor: 'gainsboro',
     borderBottomWidth: 1,
   },
 })
 
 interface Props {
-  onSubmit: () => {},
+  onSubmit: (text: string) => void,
   placeholder: string,
 }
 
-export default class Input extends Component<Props> {
+export default class MyInput extends Component<Props> {
 
   state = {
     text: '',
@@ -40,7 +42,7 @@ export default class Input extends Component<Props> {
     const {text} = this.state
 
     return (
-      <TextInput
+      <Input
         style={styles.input}
         placeholder={placeholder}
         value={text}

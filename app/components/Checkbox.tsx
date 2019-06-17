@@ -20,7 +20,7 @@ interface Props {
   onToggle: any
 }
 
-export default class Checkbox extends Component<Props> {
+export default class MyCheckbox extends Component<Props> {
   render() {
     const {onToggle, isChecked} = this.props
     // 使用<View>和样式，可以构造图形

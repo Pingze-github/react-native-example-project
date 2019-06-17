@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
 
 interface Props {
   items: any[],
-  onRemoveItem: Function,
-  onToggleItemCompleted: Function,
+  onRemoveItem: (index: number) => void,
+  onToggleItemCompleted: (index: number) => void,
 }
 
 export default class List extends Component<Props> {
