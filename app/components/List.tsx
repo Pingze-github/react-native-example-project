@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {
-  View,
-  Text,
   ScrollView,
   StyleSheet,
-  TouchableOpacity
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native'
 
 import Checkbox from './Checkbox'

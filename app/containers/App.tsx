@@ -1,18 +1,18 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- * 
+ *
  * Generated with the TypeScript template
  * https://github.com/emin93/react-native-template-typescript
- * 
+ *
  * @format
  */
 
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { connect } from 'react-redux'
-import List from '../components/List'
 import Input from '../components/Input'
+import List from '../components/List'
 import actions from '../store/actions'
 
 interface Props {
@@ -23,11 +23,6 @@ class App extends Component<Props> {
 
   render() {
     const { todos } = this.props
-
-    // const todos = [{text: '第一项'}]
-
-    console.log('App.render', todos)
-
     return (
       <View style={styles.container}>
         <Input
@@ -36,7 +31,7 @@ class App extends Component<Props> {
             this.props.dispatch(actions.addTodo(text))
           }}
         />
-        <List 
+        <List
           items={todos}
           onRemoveItem={(index: number) => {
             this.props.dispatch(actions.removeTodo(index))
@@ -53,10 +48,8 @@ class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  }
+  },
 })
-
-
 
 // 注入state到props
 const mapStateToProps = (state: any) => ({
@@ -66,4 +59,3 @@ const mapStateToProps = (state: any) => ({
 
 // 将UI组件变成容器组件
 export default connect(mapStateToProps)(App)
-

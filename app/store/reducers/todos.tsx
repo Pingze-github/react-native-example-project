@@ -1,7 +1,7 @@
 
-import { ADD_TODO, TOGGLE_TODO, REMOVE_TODO } from '../actions'
+import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions'
 
-type TODO = {
+interface TODO {
   text: string,
   completed: boolean
 }
@@ -12,22 +12,22 @@ export default function todos(state: TODO[] = [], action: any) {
       return [
         ...state,
         {
+          completed: false,
           text: action.text,
-          completed: false
-        }
+        },
       ]
     case TOGGLE_TODO:
       return state.map((todo: TODO, index) => {
         if (index === action.index) {
           return {...todo, ...{
-            completed: !todo.completed
+            completed: !todo.completed,
           }}
         }
         return todo
       })
     case REMOVE_TODO:
       const s =  state.filter((todo: TODO, index) => {
-        if (index !== action.index) return true
+        if (index !== action.index) { return true }
       })
       return s
     default:

@@ -6,6 +6,8 @@
     "start": "react-native run-android",
     "build": "cd android && gradlew assembleRelease",
     "install": "cd android && gradlew installRelease",
+    "lint": "tslint -c tslint.json 'app/**/*.tsx'",
+    "lint-fix": "tslint --fix -c tslint.json 'app/**/*.tsx'",
     "test": "jest"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.54.1",
     "react-test-renderer": "16.8.3",
+    "tslint": "^5.17.0",
     "typescript": "^3.5.2"
   },
   "jest": {
