@@ -12,6 +12,7 @@ const persistConfig = {
   storage,
 }
 
+// 以这种自动方式处理，就不会声明State接口了。后续会使用any
 const rootReducer = combineReducers({
   todos,
   visibilityFilter,

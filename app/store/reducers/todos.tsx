@@ -1,10 +1,6 @@
 
 import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions'
-
-interface TODO {
-  text: string,
-  completed: boolean
-}
+import {TODO} from '../models'
 
 export default function todos(state: TODO[] = [], action: any) {
   switch (action.type) {

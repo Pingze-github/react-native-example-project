@@ -14,12 +14,16 @@ import { connect } from 'react-redux'
 import Input from '../components/Input'
 import List from '../components/List'
 import actions from '../store/actions'
+import { TODO } from '../store/models'
 
 interface Props {
-  todos: any,
+  todos: TODO[],
   dispatch: (action: any) => void,
 }
 class App extends Component<Props> {
+  static navigationOptions = {
+    title: `App`,
+  }
 
   render() {
     const { todos } = this.props
@@ -53,9 +57,7 @@ const styles = StyleSheet.create({
 
 // 注入state到props
 const mapStateToProps = (state: any) => ({
-  // store里需要定义items，在store/index中看到
   todos: state.todos,
 })
 
-// 将UI组件变成容器组件
 export default connect(mapStateToProps)(App)

@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native'
 
+import { TODO } from '../store/models'
 import Checkbox from './Checkbox'
 
 const styles = StyleSheet.create({
@@ -36,14 +37,13 @@ const styles = StyleSheet.create({
 })
 
 interface Props {
-  items: any[],
+  items: TODO[],
   onRemoveItem: (index: number) => void,
   onToggleItemCompleted: (index: number) => void,
 }
 
 export default class List extends Component<Props> {
-
-  renderItem = (item: any, i: number) => {
+  renderItem = (item: TODO, i: number) => {
     const {onToggleItemCompleted, onRemoveItem} = this.props
     return (
       <View key={i} style={item.completed ? [styles.item, styles.completed] : styles.item}>
